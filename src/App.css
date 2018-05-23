@@ -1,0 +1,150 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: "FuturaMedium";
+  src: url("./fonts/futura medium bt.ttf");
+
+}
+@font-face {
+  font-family: "FuturaMediumCondensed";
+  src: url("./fonts/futura medium condensed bt.ttf");
+}
+
+html {
+	overflow-y: scroll; 
+}
+
+body {
+  background:#5d5e5f;
+  font-family: "FuturaMediumCondensed";
+  opacity: 100%;
+}
+
+
+.flex-container {
+display: flex;
+height: 53vh;
+justify-content: center;
+align-items: center;
+margin-top: 11vh;
+}
+
+
+.form {
+  background:#ffffff;
+  height: 53vh;
+  width: 40vh;
+  font-family: "FuturaMedium";
+  
+}
+
+h3 {
+  height: 10%;
+  background-color:#31b7e9;
+  color: #fefefe;
+  text-align:center;
+  margin:0 0 10%;
+  font-size: 1.7em;
+  font-weight: 100;
+  padding: 3% 0 0 0;
+  letter-spacing: .02em;
+}
+
+.google-map { 
+  height: 53vh;
+  width: 72vh;
+}
+
+.button {
+  letter-spacing: .1em;
+  background:#31b7e9;
+  color: #ffffff;
+  -webkit-appearance: none;
+  font-family: "FuturaMediumCondensed";
+  border-radius:1vh;
+  padding: 4% 0;
+  height: 10%;
+  background:#31b7e9;
+  color:#ffffff;
+  transition:all.5s ease;
+  font-size: 1.3em;
+  
+}
+
+.button:hover, .button:focus {
+  background: #31a0e0;
+}
+
+.button-block {
+  display: block;
+  width: 100%;
+}
+
+
+input, textarea {
+  padding: 2%;
+  width:100%;
+  height:100%;
+  background:#e6e7e9;
+  border: 0.1vh solid #ffffffc0;
+  border-radius: 1vh;
+  transition: border-color .15s ease, box-shadow .15s ease;
+
+
+}
+
+.sub-entry-1 {
+    width: 47%;
+    position:relative;
+    float: left; 
+    margin-right: 6%;
+}
+
+.sub-entry-2 {
+  width: 47%;
+  position:relative;
+  float: left; 
+  margin-right: 0;
+ 
+}
+
+  
+.form-signin {
+  padding: 0 3vh 0 3vh;
+  height: auto;
+}
+
+.form-signin .form-control {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+ 
+  font-size: 1.2em;
+  color: #212122;
+  padding: 1vh;
+
+}
+
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+.form-signin input[type="text"] {
+  margin-bottom: 3vh;
+  font-family: "FuturaMediumCondensed";
+
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #b6b9b9;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #b6b9b9;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #b6b9b9;
+}
+
