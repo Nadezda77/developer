@@ -59,9 +59,10 @@ h3 {
   letter-spacing: .1em;
   background:#31b7e9;
   color: #ffffff;
+  appearance: none;
   -webkit-appearance: none;
   font-family: "FuturaMediumCondensed";
-  border-radius:1vh;
+  border-radius:1vh; 
   padding: 4% 0;
   height: 10%;
   background:#31b7e9;
@@ -144,7 +145,5 @@ input, textarea {
   color: #b6b9b9;
 }
 
-::-ms-input-placeholder { /* Microsoft Edge */
-  color: #b6b9b9;
-}
+
 
