@@ -16,7 +16,7 @@ router.get('/show', function(req, res, next) {
 
 
 /* SAVE USER */
-router.post('/',  function(req, res) {
+router.post('/',  function(req, res, next) {
  
     Korisnik.create(req.body, function (err, post) {
       if (err) return next(err);
