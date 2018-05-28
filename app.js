@@ -14,8 +14,8 @@ mongoose.connect('mongodb://nadap:123456.A@ds133017.mlab.com:33017/nada1', { pro
   .catch((err) => console.error(err));
 
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({'extended':'false'}));
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({'extended':'false'})); // for parsing application/x-www-form-urlencoded
 app.use(express.static(path.join(__dirname, 'build')));
 
 app.use('/api/user', Korisnik);

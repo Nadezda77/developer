@@ -35,7 +35,7 @@ class App extends Component {
     axios.post('/api/user', { firstname, lastname, streetnumber, city, country })
       .then( (result) => {
        
-        this.props.history.push("/")
+        this.props.history.push("/api/user")
       });
   }
 
