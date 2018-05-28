@@ -1,12 +1,9 @@
 //
-
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 //import {Panel} from 'react-bootstrap';
 
 import MapContainer from './MapContainer';
-
 import "./App.css";
 
 class App extends Component {
@@ -34,8 +31,8 @@ class App extends Component {
 
     axios.post('/api/user', { firstname, lastname, streetnumber, city, country })
       .then( (result) => {
-       
-        this.props.history.push("/")
+        this.setState({ message: 'User has been added successfully' });
+        this.props.history.push("/success")
       });
   }
 
