@@ -15,7 +15,8 @@ class App extends Component {
       lastname: '', 
       streetnumber: '',
       city: '',
-      country: ''
+      country: '',
+      
     };
   }
   onChange = (e) => {

@@ -14,7 +14,8 @@ render() {
         <GoogleMapReact
         bootstrapURLKeys={{ key: "AIzaSyCQzdLPTgM0p3LGcDXX1b-BR650lYXvzp0" }}
           defaultCenter={ this.props.center }
-          defaultZoom={ this.props.zoom }>
+          defaultZoom={ this.props.zoom }
+          >
           <AnyReactComponent
             lat={ 44.3473310 }
             lng={ 20.5517440 }
