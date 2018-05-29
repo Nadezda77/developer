@@ -1,24 +1,37 @@
 //
 import React, { Component } from 'react';
 import axios from 'axios';
-//import {Panel} from 'react-bootstrap';
+import { geocodeByAddress } from 'react-places-autocomplete';
 
 import MapContainer from './MapContainer';
 import "./App.css";
 
+
 class App extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       firstname: '',
       lastname: '', 
       streetnumber: '',
       city: '',
       country: '',
-      
+     
     };
   }
+
+  handleChange = (country) => {
+    this.setState({ country })
+  }
+
+  handleSelect = (country) => {
+    geocodeByAddress(country)
+      
+      .then(latLng => console.log('Success', latLng))
+      .catch(error => console.error('Error', error))
+  }
+
   onChange = (e) => {
     const state = this.state
     state[e.target.name] = e.target.value;
@@ -41,26 +54,27 @@ class App extends Component {
     const { firstname, lastname, streetnumber, city, country } = this.state;
     return (
         <div class="flex-container">
-       
+      
           <div class="form">
                 <h3 >User Details</h3> 
                 <form onSubmit={this.onSubmit} class="form-signin" >
                  <div class="sub-entry-1">
-                  <input type="text" class="form-control" placeholder="First Name"  name="firstname" value={firstname} onChange={this.onChange} required autocomplete="off" />
+                  <input type="text" class="form-control" placeholder="First Name"  name="firstname" value={firstname} onChange={this.onChange} required autocomplete data-validation-error-msg="this is mandatory field "/>
                 </div>
                 <div class="sub-entry-2">
-                   <input type="text" class="form-control" placeholder="Last Name"  name="lastname" value={lastname} onChange={this.onChange} required autocomplete="off"/>
+                   <input type="text" class="form-control" placeholder="Last Name"  name="lastname" value={lastname} onChange={this.onChange} required autocomplete/>
                 </div>  
-                  <input type="text" class="form-control" placeholder="Street / Number"  name="streetnumber" value={streetnumber} onChange={this.onChange} required autocomplete="off"/>
-                  <input type="text" class="form-control" placeholder="City"  name="city" value={city} onChange={this.onChange} required autocomplete="off"/>
-                  <input type="text" class="form-control" placeholder="Country"  name="country" value={country} onChange={this.onChange} required autocomplete="off"/>    
+                  <input type="text" class="form-control" placeholder="Street / Number"  name="streetnumber" value={streetnumber} onChange={this.onChange} required autocomplete/>
+                  <input type="text" class="form-control" placeholder="City"  name="city" value={city} onChange={this.onChange} required autocomplete/>
+                  <input type="text" class="form-control" placeholder="Country"  name="country" value={country} onChange={this.onChange} required autocomplete/>    
                   <button type="submit" class="button  button-block">Add User</button>
                 </form>
+            
           </div>
        
        
         <MapContainer google={this.props.google} />
-
+     
       </div>
       
     );
