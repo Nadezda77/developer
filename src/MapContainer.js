@@ -17,8 +17,8 @@ render() {
           defaultZoom={ this.props.zoom }
           >
           <AnyReactComponent
-            lat={ 44.3473310 }
-            lng={ 20.5517440 }
+            lat={ this.props.lat }
+            lng={ this.props.lng }
             text={ 'Your Location' }
           />
         </GoogleMapReact>
