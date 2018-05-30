@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import GoogleMapReact from 'google-map-react'
 
-const AnyReactComponent = ({ text }) => <div>{ text }</div>;
+
 
 export default class MapContainer extends Component {
   static defaultProps = {
@@ -12,15 +12,11 @@ render() {
     return (
       <div class='google-map'>
         <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyCQzdLPTgM0p3LGcDXX1b-BR650lYXvzp0" }}
+          bootstrapURLKeys={{ key: "AIzaSyCQzdLPTgM0p3LGcDXX1b-BR650lYXvzp0" }}
           defaultCenter={ this.props.center }
           defaultZoom={ this.props.zoom }
           >
-          <AnyReactComponent
-            lat={ this.props.lat }
-            lng={ this.props.lng }
-            text={ 'Your Location' }
-          />
+          
         </GoogleMapReact>
       </div>
     )

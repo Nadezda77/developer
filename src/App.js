@@ -1,12 +1,12 @@
 //
 import React, { Component } from 'react';
 import axios from 'axios';
-import { geocodeByAddress } from 'react-places-autocomplete';
+// import PlacesAutocomplete,{ geocodeByAddress, getLatLng } from 'react-places-autocomplete';
 
 import MapContainer from './MapContainer';
 import "./App.css";
 
-
+const AnyReactComponent = ({ text }) => <div>{ text }</div>;
 class App extends Component {
 
   constructor(props) {
@@ -21,16 +21,16 @@ class App extends Component {
     };
   }
 
-  handleChange = (country) => {
-    this.setState({ country })
-  }
+  // handleChange = (country) => {
+  //   this.setState({ country })
+  // }
 
-  handleSelect = (country) => {
-    geocodeByAddress(country)
-      
-      .then(latLng => console.log('Success', latLng))
-      .catch(error => console.error('Error', error))
-  }
+  // handleSelect = (country) => {
+  //   geocodeByAddress(country)
+  //     .then(results => getLatLng(results[0]))
+  //     .then(latLng => console.log('Success', latLng))
+  //     .catch(error => console.error('Error', error))
+  // }
 
   onChange = (e) => {
     const state = this.state
@@ -73,10 +73,16 @@ class App extends Component {
           </div>
        
        
-        <MapContainer google={this.props.google} />
+        <MapContainer google={this.props.google} >
+        <AnyReactComponent
+            lat={ this.props.lat }
+            lng={ this.props.lng }
+            text={ 'Your Location' }
+          />
+        </MapContainer>
      
       </div>
-      
+    
     );
   }
 }

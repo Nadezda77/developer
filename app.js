@@ -19,8 +19,7 @@ app.use(bodyParser.urlencoded({'extended':'false'})); // for parsing application
 app.use(express.static(path.join(__dirname, 'build')));
 
 
-app.use('/api/user/show', Korisnik);
-app.use('/api/user/success', Korisnik);
+
 app.use('/api/user', Korisnik);
 
 // catch 404 and forward to error handler
