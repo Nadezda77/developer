@@ -12,9 +12,10 @@ import registerServiceWorker from './registerServiceWorker';
 ReactDOM.render(
 <Router>
     <div>
+    
+    <Route exact path='/show' component={Show} />
+    <Route exact path='/success' component={Success} />
     <Route exact path='/' component={App} />
-    <Route path='/show' component={Show} />
-    <Route path='/success' component={Success} />
     </div>
   </Router>
 , document.getElementById('root'));

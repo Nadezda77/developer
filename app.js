@@ -18,10 +18,10 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({'extended':'false'})); // for parsing application/x-www-form-urlencoded
 app.use(express.static(path.join(__dirname, 'build')));
 
-app.use('/api/user', Korisnik);
-app.use('/api/user/show', Korisnik);
 
+app.use('/api/user/show', Korisnik);
 app.use('/api/user/success', Korisnik);
+app.use('/api/user', Korisnik);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
